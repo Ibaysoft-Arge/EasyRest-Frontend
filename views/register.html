@@ -1,0 +1,49 @@
+<!-- views/register.html -->
+
+<div class="container">
+  <h2>Kayıt Ol</h2>
+
+  <form ng-submit="register()">
+    <div class="form-group">
+      <label for="name">İsim:</label>
+      <input
+        type="text"
+        id="name"
+        ng-model="user.name"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        ng-model="user.email"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Parola:</label>
+      <input
+        type="password"
+        id="password"
+        ng-model="user.password"
+        class="form-control"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Kayıt Ol</button>
+  </form>
+
+  <!-- Hata Mesajı -->
+  <div ng-if="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <p>
+    Zaten bir hesabınız var mı?
+    <a href="#!/login">Giriş Yapın</a>
+  </p>
+</div>

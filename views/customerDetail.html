@@ -1,0 +1,10 @@
+<!-- views/customerDetail.html -->
+<h2>{{ customer.name }}</h2>
+<p><strong>Email:</strong> {{ customer.email }}</p>
+<p><strong>Telefon:</strong> {{ customer.phone }}</p>
+
+<!-- İsterseniz daha fazla müşteri detayı ekleyebilirsiniz -->
+<p><strong>Eklenme Tarihi:</strong> {{ customer.createdAt | date:'medium' }}</p>
+
+<!-- Geri Dön Butonu -->
+<a href="#!/customers" class="btn btn-secondary">Geri Dön</a>

@@ -1,0 +1,38 @@
+<!-- views/customers-orders.html -->
+
+<div class="container">
+    <h2>Kullanıcılar ve Siparişleri</h2>
+  
+    <div ng-if="loading">
+      <p>Veriler yükleniyor...</p>
+    </div>
+  
+    <div ng-if="error">
+      <p class="text-danger">{{ error }}</p>
+    </div>
+  
+    <div ng-if="!loading && !error">
+      <div ng-repeat="user in usersWithOrders">
+        <h3>{{ user.name }} ({{ user.email }})</h3>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Ürün</th>
+              <th>Miktar</th>
+              <th>Fiyat</th>
+              <th>Tarih</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="order in user.orders">
+              <td>{{ order.product }}</td>
+              <td>{{ order.quantity }}</td>
+              <td>{{ order.price | currency }}</td>
+              <td>{{ order.date | date:'short' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
