@@ -19,15 +19,18 @@ app.config(function($routeProvider, $httpProvider) {
   $routeProvider
     .when('/login', {
       templateUrl: 'views/login.html',
-      controller: 'LoginController' // Büyük harfli 'L' ve 'C' kullanın
+      controller: 'LoginController', // Büyük harfli 'L' ve 'C' kullanın
+      isLoginPage: true
     })
     .when('/register', {
       templateUrl: 'views/register.html',
-      controller: 'registerController' // Büyük harfli 'R' ve 'C' kullanın
+      controller: 'registerController', // Büyük harfli 'R' ve 'C' kullanın
+      isLoginPage: false
     })
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html',
       controller: 'DashboardController', // Büyük harfli 'D' ve 'C' kullanın
+      isLoginPage: false,
       // Bu rotaya erişmek için giriş yapılmış olmalı
       resolve: {
         auth: function(authService, $location) {
@@ -40,6 +43,7 @@ app.config(function($routeProvider, $httpProvider) {
     .when('/customers-orders', { // Yeni sayfa için route
       templateUrl: 'views/customers-orders.html',
       controller: 'CustomersOrdersController',
+      isLoginPage: false,
       resolve: {
         auth: function(authService, $location) {
           if (!authService.isLoggedIn()) {
@@ -51,6 +55,7 @@ app.config(function($routeProvider, $httpProvider) {
     .when('/add-order', { // Yeni sipariş ekleme sayfası için route
       templateUrl: 'views/add-order.html',
       controller: 'AddOrderController',
+      isLoginPage: false,
       resolve: {
         auth: function(authService, $location) {
           if (!authService.isLoggedIn()) {

@@ -31,18 +31,38 @@ app.factory('authService', function($http, $window) {
 
   // Kullanıcı giriş yapma (API isteği)
   auth.login = function(user) {
-    return $http.post('http://172.16.127.64:5000/api/auth/login', user)
+    return $http.post('http://localhost:5000/api/auth/login', user)
       .then(function(response) {
         auth.saveToken(response.data.token);
         return response;
       });
   };
 
-  // Kullanıcı kayıt olma (API isteği)
   auth.register = function(user) {
-    return $http.post('http://172.16.127.64:5000/api/users', user)
+    // Kullanıcıdan alınan veriler (user nesnesi)
+    const newUser = {
+      kullaniciAdi: user.kullaniciAdi,
+      sifre: user.sifre,
+      email: user.email,
+      telefon: user.telefon,
+      
+      // Manuel olarak doldurulan alanlar
+      faturaBilgileri: {
+        faturaTipi: "Bireysel",  // veya Ticari, isteğe bağlı
+        faturaIl: "İstanbul",    // Sabit veya dinamik
+        faturaIlce: "Kadıköy",   // Sabit veya dinamik
+        vergiNumarasi: "1234567890", // Eğer bireysel ise boş bırakabilirsin
+        adres: "Örnek Mah. No:12",   // Sabit veya dinamik
+        postaKodu: "34000"       // Sabit veya dinamik
+      },
+      olusturulmaTarihi: new Date().toISOString(), // Şu anki tarihi otomatik ekle
+      kvkk: true, // KVKK onay durumu (kullanıcıdan almak istersen, user'dan da çekebilirsin)
+      paketBilgisi: "66ffe0340b31c9bb76a1ef9c" // Sabit bir ObjectId veya dinamik olarak oluşturulabilir
+    };
+  
+    return $http.post('http://localhost:5000/api/auth/register', newUser)
       .then(function(response) {
-        auth.saveToken(response.data.token);
+        // auth.saveToken(response.data.token);
         return response;
       });
   };
@@ -55,7 +75,7 @@ app.factory('authService', function($http, $window) {
 
   // Kullanıcı bilgilerini alma (sunucudan)
   auth.getUserFromServer = function() {
-    return $http.get('http://172.16.127.64:5000/api/auth/user')
+    return $http.get('http://localhost:5000/api/auth/user')
       .then(function(response) {
         console.log('AuthService: Kullanıcı bilgileri alındı.');
         return response;

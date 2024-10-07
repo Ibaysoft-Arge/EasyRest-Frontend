@@ -18,6 +18,15 @@
 
     <meta name="description" content="" />
 
+     <!-- AngularJS -->
+  <script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"
+></script>
+<!-- AngularJS Route -->
+<script
+  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"
+></script>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/assets/img/favicon/favicon.ico" />
 
@@ -57,9 +66,16 @@
     <script src="/assets/js/config.js"></script>
   </head>
 
-  <body>
-    <!-- Content -->
-    <div ng-view></div>
+  <body ng-controller="mainController">
+    <!-- Master Page İçeriği (Sadece login sayfasında görünmeyecek) -->
+    <div ng-if="isLoginPage">
+        <div ng-view></div>
+    </div>
+
+    <!-- Login ve benzeri sayfalar için ayrı şablon (Master Page olmadan gösterilecek) -->
+    <div ng-if="!isLoginPage">
+      <div ng-view></div>
+    </div>
     <!-- / Content -->
 
     <!-- Core JS -->
@@ -82,23 +98,13 @@
     <script src="/assets/vendor/libs/@form-validation/auto-focus.js"></script>
 
  
-  <!-- AngularJS -->
-  <script
-    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"
-  ></script>
-  <!-- AngularJS Route -->
-  <script
-    src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"
-  ></script>
+ 
   <script src="app.js"></script>
   <script src="services/authService.js"></script>
-  <script src="services/customerService.js"></script>
   <script src="services/authInterceptor.js"></script>
   <script src="controllers/loginController.js"></script>
   <script src="controllers/registerController.js"></script>
   <script src="controllers/dashboardController.js"></script>
-  <script src="controllers/customerController.js"></script>
-  <script src="controllers/CustomersOrdersController.js"></script> 
-  <script src="controllers/AddOrderController.js"></script> 
+  <script src="controllers/mainController.js"></script> 
   </body>
 </html>
