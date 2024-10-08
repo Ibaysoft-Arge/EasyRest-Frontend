@@ -1,6 +1,6 @@
 // app.js
 
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', ['ngRoute','pascalprecht.translate','ngSanitize']);
 
 // Sayfalama için özel filtre
 app.filter('startFrom', function() {
@@ -49,6 +49,18 @@ app.config(function($routeProvider, $httpProvider) {
     .otherwise({
       redirectTo: '/login'
     });
+});
+
+// Çeviri ayarları
+app.config(function($translateProvider) {
+  $translateProvider.useStaticFilesLoader({
+    prefix: '/languages/',
+    suffix: '.json'
+  });
+
+  // Varsayılan dili ayarla
+  $translateProvider.preferredLanguage('tr');
+  $translateProvider.fallbackLanguage('tr');
 });
 
 // Auth Interceptor (Dairesel Bağımlılığı Kırmak İçin $injector Kullanıldı)

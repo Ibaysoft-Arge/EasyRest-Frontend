@@ -167,6 +167,7 @@
                           </a>
                         </li>
                         <li class="nav-item">
+                       
                           <a
                             class="nav-link mega-dropdown-link"
                             href="../vertical-menu-template/auth-login-cover.html"
@@ -375,6 +376,12 @@
                 ><span class="tf-icons bx bx-log-in-circle scaleX-n1-rtl me-md-1"></span
                 ><span class="d-none d-md-block">Login/Register</span></a
               >
+              <button id="langTR" ng-click="changeLanguage('tr')" class="btn btn-icon btn-label-primary reviews-btn" type="button">
+                <i class="bx bx-chevron-right bx-md">tr</i>
+              </button>
+              <button id="langEN" ng-click="changeLanguage('en')" class="btn btn-icon btn-label-primary reviews-btn" type="button">
+                <i class="bx bx-chevron-right bx-md">en</i>
+              </button>
             </li>
             <!-- navbar button: End -->
           </ul>
@@ -398,7 +405,9 @@
           <div class="container">
             <div class="hero-text-box text-center position-relative">
               <h1 class="text-primary hero-title display-6 fw-extrabold">
-                One dashboard to manage all your businesses
+                
+<h1>{{ 'TITLE' | translate }}</h1>
+<p>{{ 'DESCRIPTION' | translate }}</p>
               </h1>
               <h2 class="hero-sub-title h6 mb-6">
                 Production-ready & easy to use Admin Template<br class="d-none d-lg-block" />
@@ -894,7 +903,7 @@
           </div>
           <h4 class="text-center mb-1">
             <span class="position-relative fw-extrabold z-1"
-              >Tailored pricing planss
+              >Tailored pricing plans
               <img
                 src="../../assets/img/front-pages/icons/section-title-icon.png"
                 alt="laptop charging"
