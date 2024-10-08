@@ -11,6 +11,9 @@
   "description": "",
   "dependencies": {
     "@angular/cli": "^18.2.7",
+    "angular-sanitize": "^1.8.3",
+    "angular-translate": "^2.19.1",
+    "angular-translate-loader-static-files": "^2.19.1",
     "express": "^4.21.0"
   }
 }
