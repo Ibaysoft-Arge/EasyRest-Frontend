@@ -29,7 +29,7 @@ app.config(function($routeProvider, $httpProvider) {
     })
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html',
-      controller: 'DashboardController', // Büyük harfli 'D' ve 'C' kullanın
+      controller: 'paketController', // Büyük harfli 'D' ve 'C' kullanın
       isLoginPage: false,
       // Bu rotaya erişmek için giriş yapılmış olmalı
       resolve: {
@@ -40,29 +40,11 @@ app.config(function($routeProvider, $httpProvider) {
         }
       }
     })
-    .when('/customers-orders', { // Yeni sayfa için route
-      templateUrl: 'views/customers-orders.html',
-      controller: 'CustomersOrdersController',
-      isLoginPage: false,
-      resolve: {
-        auth: function(authService, $location) {
-          if (!authService.isLoggedIn()) {
-            $location.path('/login');
-          }
-        }
-      }
-    })
-    .when('/add-order', { // Yeni sipariş ekleme sayfası için route
-      templateUrl: 'views/add-order.html',
-      controller: 'AddOrderController',
-      isLoginPage: false,
-      resolve: {
-        auth: function(authService, $location) {
-          if (!authService.isLoggedIn()) {
-            $location.path('/login');
-          }
-        }
-      }
+    .when('/landing', {
+      templateUrl: 'views/landing.html',
+      controller: 'paketController', // Büyük harfli 'D' ve 'C' kullanın
+      isLoginPage: true,
+      // Bu rotaya erişmek için giriş yapılmış olmalı
     })
     .otherwise({
       redirectTo: '/login'
