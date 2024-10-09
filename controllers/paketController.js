@@ -1,4 +1,4 @@
-app.controller('paketController', function($scope, paketService, $translate) {
+app.controller('paketController', function($scope, paketService, $translate,$rootScope) {
     $scope.paketler = {};
 
     paketService.getPaketler().then(function(response) {
@@ -20,5 +20,8 @@ app.controller('paketController', function($scope, paketService, $translate) {
         $scope.changeLanguage = function (langKey) {
             console.log("changeLanguage="+langKey);
             $translate.use(langKey);
+            localStorage.setItem('selectedLanguage', langKey);
+            $rootScope.selectedLanguage = langKey;
+            
           };
 });

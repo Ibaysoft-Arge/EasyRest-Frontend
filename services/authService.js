@@ -12,7 +12,7 @@ app.factory('authService', function($http, $window) {
   // Kullanıcı token'ını alma
   auth.getToken = function() {
     var token = $window.localStorage['token'];
-    console.log('AuthService: Token alındı:', token);
+  //  console.log('AuthService: Token alındı:', token);
     return token;
   };
 
@@ -71,6 +71,7 @@ app.factory('authService', function($http, $window) {
   auth.logOut = function() {
     $window.localStorage.removeItem('token');
     console.log('AuthService: Token kaldırıldı.');
+  
   };
 
   // Kullanıcı bilgilerini alma (sunucudan)

@@ -1,6 +1,6 @@
 // controllers/dashboardController.js
 
-app.controller('DashboardController', function($scope, authService, $location) {
+app.controller('dashboardController', function($scope, authService, $location) {
 
   $scope.user = {};
     // Kullanıcı bilgilerini alma

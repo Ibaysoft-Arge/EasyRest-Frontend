@@ -29,7 +29,7 @@ app.config(function($routeProvider, $httpProvider) {
     })
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html',
-      controller: 'paketController', // Büyük harfli 'D' ve 'C' kullanın
+      controller: 'dashboardController', // Büyük harfli 'D' ve 'C' kullanın
       isLoginPage: false,
       // Bu rotaya erişmek için giriş yapılmış olmalı
       resolve: {
@@ -90,7 +90,7 @@ app.factory('AuthInterceptor', function($q, $injector) {
 });
 
 // Uygulama çalıştırma
-app.run(function($rootScope, $location, authService) {
+app.run(function($rootScope, $location, authService, $translate) {
   $rootScope.$on('$routeChangeStart', function(event, next, current) {
     if (next.$$route && next.$$route.resolve && next.$$route.resolve.auth) {
       if (!authService.isLoggedIn()) {
@@ -98,4 +98,10 @@ app.run(function($rootScope, $location, authService) {
       }
     }
   });
+
+  var savedLanguage = localStorage.getItem('selectedLanguage'); // localStorage'dan dili alın
+  if (savedLanguage) {
+    $translate.use(savedLanguage);
+    $rootScope.selectedLanguage = savedLanguage; // Eğer dil varsa, onu kullanın
+  }
 });
