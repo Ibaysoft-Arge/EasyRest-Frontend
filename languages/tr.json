@@ -1,6 +1,15 @@
 {
     "TITLE": "Merhaba",
     "DESCRIPTION": "Bu bir Türkçe açıklama",
-    "appName":"easyco"
+    "appName":"easyco",
+    "LOGINTITLE":"Hoşgeldiniz.",
+    "LOGINDESCRIPTION":"Uygulama yönetiminizi kolay hale getirin!",
+    "LOGINEMAIL":"E-mail",
+    "LOGINPASSWORD":"Şifre",
+    "LOGINREMEMBERME":"Beni Hatırla",
+    "LOGINFORGOTPASSWORD":"Şifremi Unuttum",
+    "LOGINSIGNIN":"Giriş Yap",
+    "LOGINREGISTERDESCRIPTION":"Üye değil misiniz?",
+    "LOGINREGISTER":"Yeni hesap oluştur"
   }
   
