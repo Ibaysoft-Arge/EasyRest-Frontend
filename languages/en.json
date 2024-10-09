@@ -2,15 +2,17 @@
     "TITLE": "Hello",
     "DESCRIPTION": "This is an English description",
     "appName":"easyco",
+  
     "LOGINTITLE":"Welcome.",
     "LOGINDESCRIPTION":"Make your app management easy !",
-    "LOGINEMAIL":"E-mail",
+    "LOGINUSERNAME":"Username",
     "LOGINPASSWORD":"Password",
     "LOGINREMEMBERME":"Remember Me",
     "LOGINFORGOTPASSWORD":"Forgot Password",
     "LOGINSIGNIN":"Sign In",
     "LOGINREGISTERDESCRIPTION":"Not an account ?",
     "LOGINREGISTER":"Create new account",
+
     "REGISTERTITLE":"Welcome.",
     "REGISTERDESCRIPTION" :"Make your app management easy !",
     "REGISTERNAME" :"Username",
@@ -21,6 +23,19 @@
     "REGISTERKVKK": "privacy policy & terms",
     "REGISTERSIGNUP" : "Sıgn Up",
     "REGISTERLOGINDESCP":"Already have account.",
-    "REGISTERLOGIN":"Sign In"
+    "REGISTERLOGIN":"Sign In",
+
+    "FORGOTPASSWORDBACKTOLOGIN" :"Back to login",
+    "FORGOTPASSWORDSENDLINK":"Send Mail",
+    "FORGOTPASSWORDEMAIL": "E-mail",
+    "FORGOTPASSWORDDESCRIPTION": "Enter your email and we'll send you instructions to reset your password",
+    "FORGOTPASSWORDTITLE":" Forgot Password!",
+
+    "RESETPASSWORDTITLE":"Reset Password",
+    "RESETPASSWORDDESCRIPTION":"Your new password must be different from previously used passwords",
+    "RESETPASSWORDNEWPASS":"New Password",
+    "RESETPASSWORDCONFIRMPASS":"Confirm New Password",
+    "RESETPASSWORD":"Set new password",
+    "RESETPASSWORDBACKTOLOGIN":"Back to login"
   }
   

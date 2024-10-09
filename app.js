@@ -24,12 +24,22 @@ app.config(function($routeProvider, $httpProvider) {
     })
     .when('/register', {
       templateUrl: 'views/register.html',
-      controller: 'registerController', // Büyük harfli 'R' ve 'C' kullanın
+      controller: 'registerController', 
+      isLoginPage: false
+    })
+    .when('/forgotpassword', {
+      templateUrl: 'views/forgotPassword.html',
+      controller: 'LoginController', 
+      isLoginPage: false
+    })
+    .when('/resetpassword', {
+      templateUrl: 'views/resetPassword.html',
+      controller: 'LoginController', 
       isLoginPage: false
     })
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html',
-      controller: 'dashboardController', // Büyük harfli 'D' ve 'C' kullanın
+      controller: 'dashboardController', 
       isLoginPage: false,
       // Bu rotaya erişmek için giriş yapılmış olmalı
       resolve: {
@@ -47,7 +57,7 @@ app.config(function($routeProvider, $httpProvider) {
       // Bu rotaya erişmek için giriş yapılmış olmalı
     })
     .otherwise({
-      redirectTo: '/login'
+      redirectTo: '/landing'
     });
 });
 

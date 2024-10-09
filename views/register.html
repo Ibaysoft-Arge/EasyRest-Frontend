@@ -45,14 +45,14 @@
         </g>
       </svg>
     </span>
-    <span class="app-brand-text demo text-heading fw-bold">sneat</span>
+    <span class="app-brand-text demo text-heading fw-bold">{{ 'appName' | translate }}</span>
   </a>
   <!-- /Logo -->
   <div class="authentication-inner row m-0">
     <!-- /Left Text -->
     <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
       <div class="w-100 d-flex justify-content-center">
-        <img src="../../assets/img/illustrations/girl-with-laptop-light.png" class="img-fluid scaleX-n1-rtl"
+        <img src="/assets/img/illustrations/girl-with-laptop-light.png" class="img-fluid scaleX-n1-rtl"
           alt="Login image" width="700" data-app-dark-img="illustrations/girl-with-laptop-dark.png"
           data-app-light-img="illustrations/girl-with-laptop-light.png" />
       </div>
@@ -76,7 +76,6 @@
             <input type="text" class="form-control" id="email" name="email" ng-model="user.email"
               placeholder="{{ 'REGISTEREMAIL' | translate }}" />
           </div>
-
           <!-- Phone number field -->
           <div class="mb-6">
             <label for="phone" class="form-label">{{ 'REGISTERPHONE' | translate }}</label>
