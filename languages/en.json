@@ -1,6 +1,15 @@
 {
     "TITLE": "Hello",
     "DESCRIPTION": "This is an English description",
-    "appName":"easyco"
+    "appName":"easyco",
+    "LOGINTITLE":"Welcome.",
+    "LOGINDESCRIPTION":"Make your app management easy !",
+    "LOGINEMAIL":"E-mail",
+    "LOGINPASSWORD":"Password",
+    "LOGINREMEMBERME":"Remember Me",
+    "LOGINFORGOTPASSWORD":"Forgot Password",
+    "LOGINSIGNIN":"Sign In",
+    "LOGINREGISTERDESCRIPTION":"Not an account ?",
+    "LOGINREGISTER":"Create new account"
   }
   
