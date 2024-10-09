@@ -2,15 +2,17 @@
     "TITLE": "Merhaba",
     "DESCRIPTION": "Bu bir Türkçe açıklama",
     "appName":"easyco",
+
     "LOGINTITLE":"Hoşgeldiniz.",
     "LOGINDESCRIPTION":"Uygulama yönetiminizi kolay hale getirin!",
-    "LOGINEMAIL":"E-mail",
+    "LOGINUSERNAME":"E-mail",
     "LOGINPASSWORD":"Şifre",
     "LOGINREMEMBERME":"Beni Hatırla",
     "LOGINFORGOTPASSWORD":"Şifremi Unuttum",
     "LOGINSIGNIN":"Giriş Yap",
     "LOGINREGISTERDESCRIPTION":"Üye değil misiniz?",
     "LOGINREGISTER":"Yeni hesap oluştur",
+
     "REGISTERTITLE":"Hoşgeldiniz.",
     "REGISTERDESCRIPTION" :"Uygulama yönetiminizi kolay hale getirin!",
     "REGISTERNAME" :"Kullanıcı Adı",
@@ -21,6 +23,20 @@
     "REGISTERKVKK": "Kvkk Sözleşmesi",
     "REGISTERSIGNUP" : "Üye Ol",
     "REGISTERLOGINDESCP":"Zaten üye misiniz.",
-    "REGISTERLOGIN":"Giriş Yap"
+    "REGISTERLOGIN":"Giriş Yap",
+
+    "FORGOTPASSWORDBACKTOLOGIN" :"Girişe geri dön",
+    "FORGOTPASSWORDSENDLINK":"Mail Gönder",
+    "FORGOTPASSWORDEMAIL": "E-mail",
+    "FORGOTPASSWORDDESCRIPTION": "Şifreyi sıfırlamak için kayıtlı emailinizi giriniz.",
+    "FORGOTPASSWORDTITLE":" Şifremi Unuttum!",
+
+    "RESETPASSWORDTITLE":"Şifreyi Sıfırla",
+    "RESETPASSWORDDESCRIPTION":"Şifrenizi sıfırlamak için yeni şifrenizi giriniz.",
+    "RESETPASSWORDNEWPASS":"Yeni Şifre",
+    "RESETPASSWORDCONFIRMPASS":"Yeni Şifre Tekrar",
+    "RESETPASSWORD":"Şifreyi Güncelle",
+    "RESETPASSWORDBACKTOLOGIN":"Girişe geri dön"
+
   }
   
