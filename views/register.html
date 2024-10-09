@@ -2,11 +2,7 @@
   <!-- Logo -->
   <a href="index.html" class="app-brand auth-cover-brand gap-2">
     <span class="app-brand-logo demo">
-      <svg
-        width="25"
-        viewBox="0 0 25 42"
-        version="1.1"
-        xmlns="http://www.w3.org/2000/svg"
+      <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
         <defs>
           <path
@@ -39,8 +35,7 @@
                   <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>
                 </g>
               </g>
-              <g
-                id="Triangle"
+              <g id="Triangle"
                 transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">
                 <use fill="#696cff" xlink:href="#path-5"></use>
                 <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>
@@ -57,12 +52,8 @@
     <!-- /Left Text -->
     <div class="d-none d-lg-flex col-lg-7 col-xl-8 align-items-center p-5">
       <div class="w-100 d-flex justify-content-center">
-        <img
-          src="../../assets/img/illustrations/girl-with-laptop-light.png"
-          class="img-fluid scaleX-n1-rtl"
-          alt="Login image"
-          width="700"
-          data-app-dark-img="illustrations/girl-with-laptop-dark.png"
+        <img src="../../assets/img/illustrations/girl-with-laptop-light.png" class="img-fluid scaleX-n1-rtl"
+          alt="Login image" width="700" data-app-dark-img="illustrations/girl-with-laptop-dark.png"
           data-app-light-img="illustrations/girl-with-laptop-light.png" />
       </div>
     </div>
@@ -71,41 +62,32 @@
     <!-- Register -->
     <div class="d-flex col-12 col-lg-5 col-xl-4 align-items-center authentication-bg p-sm-12 p-6">
       <div class="w-px-400 mx-auto mt-12 pt-5">
-        <h4 class="mb-1">{{ 'TITLE' | translate }}</h4>
-        <p class="mb-6">Make your app management easy and fun!</p>
+        <h4 class="mb-1">{{ 'REGISTERTITLE' | translate }}</h4>
+        <p class="mb-6">{{ 'REGISTERDESCRIPTION' | translate }}</p>
 
         <form ng-submit="register()">
           <div class="mb-6">
-            <label for="username" class="form-label">Username</label>
-            <input
-              type="text"
-              class="form-control"
-              id="username"
-              name="username"
-              ng-model="user.kullaniciAdi"
-              placeholder="Enter your username"
-              autofocus />
+            <label for="username" class="form-label">{{ 'REGISTERNAME' | translate }}</label>
+            <input type="text" class="form-control" id="username" name="username" ng-model="user.kullaniciAdi"
+              placeholder="{{ 'REGISTERNAME' | translate }}" autofocus />
           </div>
           <div class="mb-6">
-            <label for="email" class="form-label">Email</label>
-            <input type="text" class="form-control" id="email" name="email"  ng-model="user.email" placeholder="Enter your email" />
+            <label for="email" class="form-label">{{ 'REGISTEREMAIL' | translate }}</label>
+            <input type="text" class="form-control" id="email" name="email" ng-model="user.email"
+              placeholder="{{ 'REGISTEREMAIL' | translate }}" />
           </div>
 
           <!-- Phone number field -->
           <div class="mb-6">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="tel" class="form-control"  ng-model="user.telefon" id="phone" name="phone" placeholder="Enter your phone number" />
+            <label for="phone" class="form-label">{{ 'REGISTERPHONE' | translate }}</label>
+            <input type="tel" class="form-control" ng-model="user.telefon" id="phone" name="phone"
+              placeholder="{{ 'REGISTERPHONE' | translate }}" />
           </div>
 
           <div class="mb-6 form-password-toggle">
-            <label class="form-label" for="password">Password</label>
+            <label class="form-label" for="password">{{ 'REGISTERPASSWORD' | translate }}</label>
             <div class="input-group input-group-merge">
-              <input
-                type="password"
-                id="password"
-                class="form-control"
-                name="password"
-                ng-model="user.sifre"
+              <input type="password" id="password" class="form-control" name="password" ng-model="user.sifre"
                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                 aria-describedby="password" />
               <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
@@ -116,12 +98,12 @@
             <div class="form-check mb-8 ms-2">
               <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
               <label class="form-check-label" for="terms-conditions">
-                I agree to
-                <a href="javascript:void(0);">privacy policy & terms</a>
+                {{ 'REGISTERKVKKDESCP' | translate }}
+                <a href="javascript:void(0);">{{ 'REGISTERKVKK' | translate }}</a>
               </label>
             </div>
           </div>
-          <button class="btn btn-primary d-grid w-100">Sign up</button>
+          <button class="btn btn-primary d-grid w-100">{{ 'REGISTERSIGNUP' | translate }}</button>
         </form>
 
         <!-- Hata Mesajı -->
@@ -130,33 +112,13 @@
         </div>
 
         <p class="text-center">
-          <span>Already have an account?</span>
+          <span>{{ 'REGISTERLOGINDESCP' | translate }}</span>
           <a href="#!/login">
-            <span>Sign in instead</span>
+            <span>{{ 'REGISTERLOGIN' | translate }}</span>
           </a>
         </p>
 
-        <div class="divider my-6">
-          <div class="divider-text">or</div>
-        </div>
 
-        <div class="d-flex justify-content-center">
-          <a href="javascript:;" class="btn btn-sm btn-icon rounded-circle btn-text-facebook me-1_5">
-            <i class="bx bxl-facebook-circle"></i>
-          </a>
-
-          <a href="javascript:;" class="btn btn-sm btn-icon rounded-circle btn-text-twitter me-1_5">
-            <i class="tf-icons bx bxl-twitter"></i>
-          </a>
-
-          <a href="javascript:;" class="btn btn-sm btn-icon rounded-circle btn-text-github me-1_5">
-            <i class="bx bxl-github"></i>
-          </a>
-
-          <a href="javascript:;" class="btn btn-sm btn-icon rounded-circle btn-text-google-plus">
-            <i class="tf-icons bx bxl-google"></i>
-          </a>
-        </div>
       </div>
     </div>
     <!-- /Register -->

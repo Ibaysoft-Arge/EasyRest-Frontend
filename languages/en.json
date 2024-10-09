@@ -10,6 +10,17 @@
     "LOGINFORGOTPASSWORD":"Forgot Password",
     "LOGINSIGNIN":"Sign In",
     "LOGINREGISTERDESCRIPTION":"Not an account ?",
-    "LOGINREGISTER":"Create new account"
+    "LOGINREGISTER":"Create new account",
+    "REGISTERTITLE":"Welcome.",
+    "REGISTERDESCRIPTION" :"Make your app management easy !",
+    "REGISTERNAME" :"Username",
+    "REGISTEREMAIL": "E-mail",
+    "REGISTERPHONE" :"Phone Number",
+    "REGISTERPASSWORD" : "Password",
+    "REGISTERKVKKDESCP": "Agree to",
+    "REGISTERKVKK": "privacy policy & terms",
+    "REGISTERSIGNUP" : "Sıgn Up",
+    "REGISTERLOGINDESCP":"Already have account.",
+    "REGISTERLOGIN":"Sign In"
   }
   

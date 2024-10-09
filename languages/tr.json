@@ -10,6 +10,17 @@
     "LOGINFORGOTPASSWORD":"Şifremi Unuttum",
     "LOGINSIGNIN":"Giriş Yap",
     "LOGINREGISTERDESCRIPTION":"Üye değil misiniz?",
-    "LOGINREGISTER":"Yeni hesap oluştur"
+    "LOGINREGISTER":"Yeni hesap oluştur",
+    "REGISTERTITLE":"Hoşgeldiniz.",
+    "REGISTERDESCRIPTION" :"Uygulama yönetiminizi kolay hale getirin!",
+    "REGISTERNAME" :"Kullanıcı Adı",
+    "REGISTEREMAIL": "E-mail",
+    "REGISTERPHONE" :"Telefon Numarası",
+    "REGISTERPASSWORD" : "Şifre",
+    "REGISTERKVKKDESCP": "Kabul ediyorum",
+    "REGISTERKVKK": "Kvkk Sözleşmesi",
+    "REGISTERSIGNUP" : "Üye Ol",
+    "REGISTERLOGINDESCP":"Zaten üye misiniz.",
+    "REGISTERLOGIN":"Giriş Yap"
   }
   
