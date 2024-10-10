@@ -54,7 +54,7 @@ app.controller("LoginController", function ($scope, authService, $location) {
   $scope.forgotPassword = function() {
     authService.forgotPassword({ email: $scope.user.email }) // e-posta adresini gönder
     .then(function(response) {
-        $scope.errorMessage = 'Başarılı, mail adresini kontrol ediniz.';
+        $scope.successMessage = 'Başarılı, mail adresini kontrol ediniz.';
     })
     .catch(function(error) {
         console.error('Kayıt olurken hata:', error);
@@ -68,7 +68,7 @@ app.controller("LoginController", function ($scope, authService, $location) {
 $scope.resetPassword = function() {
   authService.resetPassword({ sifre: $scope.user.sifre , guid : $scope.guid , userId : $scope.userID }) // e-posta adresini gönder
   .then(function(response) {
-      $scope.errorMessage = 'Başarılı, Tekrar giriş yapın.';
+      $scope.successMessage = 'Başarılı, Tekrar giriş yapın.';
       $location.path("/login").search({});
   })
   .catch(function(error) {

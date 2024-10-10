@@ -59,12 +59,14 @@ app.factory('authService', function ($http, $window) {
       },
       olusturulmaTarihi: new Date().toISOString(), // Şu anki tarihi otomatik ekle
       kvkk: true, // KVKK onay durumu (kullanıcıdan almak istersen, user'dan da çekebilirsin)
-      paketBilgisi: "66ffe0340b31c9bb76a1ef9c" // Sabit bir ObjectId veya dinamik olarak oluşturulabilir
+      paketBilgisi: "6707a0fa434842226a6d8853" // Sabit bir ObjectId veya dinamik olarak oluşturulabilir
     };
 
     return $http.post('http://localhost:5000/api/auth/register', newUser)
       .then(function (response) {
         // auth.saveToken(response.data.token);
+
+
         return response;
       });
   };
