@@ -50,6 +50,19 @@ app.config(function($routeProvider, $httpProvider) {
         }
       }
     })
+    .when('/sayfa1', {
+      templateUrl: 'views/sayfa1.html',
+      controller: 'dashboardController', 
+      isLoginPage: false,
+      // Bu rotaya erişmek için giriş yapılmış olmalı
+      resolve: {
+        auth: function(authService, $location) {
+          if (!authService.isLoggedIn()) {
+            $location.path('/login');
+          }
+        }
+      }
+    })
     .when('/landing', {
       templateUrl: 'views/landing.html',
       controller: 'paketController', // Büyük harfli 'D' ve 'C' kullanın

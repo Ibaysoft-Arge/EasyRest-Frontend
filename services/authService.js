@@ -1,6 +1,6 @@
 // services/authService.js
 
-app.factory('authService', function ($http, $window) {
+app.factory('authService', function ($http, $window, $rootScope) {
   var auth = {};
 
   // Kullanıcı token'ını kaydetme
@@ -28,48 +28,109 @@ app.factory('authService', function ($http, $window) {
       return false;
     }
   };
-
   // Kullanıcı giriş yapma (API isteği)
   auth.login = function (user) {
     return $http.post('http://localhost:5000/api/auth/login', user)
       .then(function (response) {
-        auth.saveToken(response.data.token);
+        const token = response.data.token;
+
+        // Token'ı localStorage'a kaydet
+        auth.saveToken(token);
+
+        // Token'ı çözümle ve user.id'yi al
+        const decodedToken = parseJwt(token);
+        const userId = decodedToken.user.id; // 'userId' değil 'id' olmalı
+
+        // userId'yi localStorage'a kaydet
+        $window.localStorage['userIdLS'] = userId;
+
+        // Doğru şekilde localStorage'daki değeri kontrol edelim
+        console.log($window.localStorage['userIdLS']);
+
         return response;
       });
   };
 
+  // Token'ı base64 formatında decode eden fonksiyon (jwt-decode kütüphanesi kullanmadan)
+  function parseJwt(token) {
+    const base64Url = token.split('.')[1]; // JWT'nin payload kısmı
+    const base64 = decodeURIComponent(atob(base64Url).split('').map(function (c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+
+    return JSON.parse(base64); // JWT içindeki JSON verisi
+  }
 
 
   auth.register = function (user) {
     // Kullanıcıdan alınan veriler (user nesnesi)
     const newUser = {
-      kullaniciAdi: user.kullaniciAdi,
-      sifre: user.sifre,
-      email: user.email,
-      telefon: user.telefon,
-
-      // Manuel olarak doldurulan alanlar
-      faturaBilgileri: {
-        faturaTipi: "Bireysel",  // veya Ticari, isteğe bağlı
-        faturaIl: "İstanbul",    // Sabit veya dinamik
-        faturaIlce: "Kadıköy",   // Sabit veya dinamik
-        vergiNumarasi: "1234567890", // Eğer bireysel ise boş bırakabilirsin
-        adres: "Örnek Mah. No:12",   // Sabit veya dinamik
-        postaKodu: "34000"       // Sabit veya dinamik
+      "kullaniciAdi": user.kullaniciAdi,
+      "sifre": user.sifre,
+      "email": user.email,
+      "telefon": user.telefon,
+      "faturaBilgileri": {
+        "faturaTipi": "Bireysel",
+        "faturaIl": "İstanbul",
+        "faturaIlce": "Kadıköy",
+        "vergiNumarasi": "1234567890",
+        "adres": "Örnek Mah. No:12",
+        "postaKodu": "34000"
       },
-      olusturulmaTarihi: new Date().toISOString(), // Şu anki tarihi otomatik ekle
-      kvkk: true, // KVKK onay durumu (kullanıcıdan almak istersen, user'dan da çekebilirsin)
-      paketBilgisi: "6707a0fa434842226a6d8853" // Sabit bir ObjectId veya dinamik olarak oluşturulabilir
-    };
+      "olusturulmaTarihi": "2024-10-11T07:51:39.775Z",
+      "kvkk": true,
+      "paketBilgisi": "6707a0fa434842226a6d8853",
+      "moduller": [
+        {
+          "modul": "6707a24b434842226a6d8855",
+          "bitisTarihi": "2024-10-11",
+          "altModuller": [
+            {
+              "altModul": "670518574fe4e2f776cbc7df",
+              "sayfalar": [
+                "6705188a4fe4e2f776cbc7e3",
+                "670518bb4fe4e2f776cbc7e5"
+              ]
+            },
+            {
+              "altModul": "6705185b4fe4e2f776cbc7e1",
+              "sayfalar": [
+                "670518c44fe4e2f776cbc7e7"
+              ]
+            }
+          ]
+        },
+        {
+          "modul": "6707a274434842226a6d8857",
+          "bitisTarihi": "2024-10-21",
+          "altModuller": []
+        },
+        {
+          "modul": "6707a2a1434842226a6d8859",
+          "bitisTarihi": "2024-10-21",
+          "altModuller": []
+        },
+        {
+          "modul": "6707a2c4434842226a6d885b",
+          "bitisTarihi": "2024-10-21",
+          "altModuller": []
+        }
+      ],
+      "ekModuller": []
+
+    }
 
     return $http.post('http://localhost:5000/api/auth/register', newUser)
       .then(function (response) {
         // auth.saveToken(response.data.token);
-
-
         return response;
       });
+
   };
+
+
+
+
 
   // Kullanıcı çıkış yapma
   auth.logOut = function () {
@@ -92,7 +153,7 @@ app.factory('authService', function ($http, $window) {
   };
 
   auth.forgotPassword = function (user) {
-    return $http.post('http://localhost:5000/api/auth/sendEmail', { email: user.email }) // e-posta adresini nesne içinde gönder
+    return $http.post('http://localhost:5000/api/auth/sendEmail', { email: user.email, lang: $rootScope.selectedLanguage }) // e-posta adresini nesne içinde gönder
       .then(function (response) {
         return response;
       });
@@ -103,7 +164,7 @@ app.factory('authService', function ($http, $window) {
       userId: user.userId,
       guid: user.guid,
       newPassword: user.sifre
-    }) 
+    })
       .then(function (response) {
         return response;
       });
