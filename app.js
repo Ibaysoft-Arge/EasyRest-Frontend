@@ -68,9 +68,18 @@ app.config(function($translateProvider) {
     suffix: '.json'
   });
 
-  // Varsayılan dili ayarla
-  $translateProvider.preferredLanguage('tr');
-  $translateProvider.fallbackLanguage('tr');
+  var userLang = navigator.language || navigator.userLanguage; // Tarayıcı dilini al
+  console.log("Tarayıcı Dili: ", userLang);
+
+  // Eğer tarayıcı dili Türkçe ise 'tr', değilse 'en' olarak varsayılan dili ayarla
+  if (userLang.startsWith('tr')) {
+    $translateProvider.preferredLanguage('tr');
+  } else {
+    $translateProvider.preferredLanguage('en');
+  }
+
+  // Varsayılan fallback dilini de ayarla
+  $translateProvider.fallbackLanguage('en');
 });
 
 // Auth Interceptor (Dairesel Bağımlılığı Kırmak İçin $injector Kullanıldı)
