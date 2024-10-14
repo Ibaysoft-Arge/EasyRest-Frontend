@@ -20,27 +20,32 @@ app.config(function($routeProvider, $httpProvider) {
     .when('/login', {
       templateUrl: 'views/login.html',
       controller: 'LoginController', // Büyük harfli 'L' ve 'C' kullanın
-      isLoginPage: true
+      isLoginPage: true,
+      layout:'/layout/main-layout.html',
     })
     .when('/register', {
       templateUrl: 'views/register.html',
       controller: 'registerController', 
-      isLoginPage: false
+      isLoginPage: false,
+      layout:'/layout/main-layout.html',
     })
     .when('/forgotpassword', {
       templateUrl: 'views/forgotPassword.html',
       controller: 'LoginController', 
-      isLoginPage: false
+      isLoginPage: false,
+      layout:'/layout/main-layout.html',
     })
     .when('/resetpassword', {
       templateUrl: 'views/resetPassword.html',
       controller: 'LoginController', 
-      isLoginPage: false
+      isLoginPage: false,
+      layout:'/layout/main-layout.html',
     })
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html',
       controller: 'dashboardController', 
       isLoginPage: false,
+      layout:'/layout/dashboard-layout.html',
       // Bu rotaya erişmek için giriş yapılmış olmalı
       resolve: {
         auth: function(authService, $location) {
@@ -54,6 +59,7 @@ app.config(function($routeProvider, $httpProvider) {
       templateUrl: 'views/sayfa1.html',
       controller: 'dashboardController', 
       isLoginPage: false,
+      layout:'/layout/dashboard-layout.html',
       // Bu rotaya erişmek için giriş yapılmış olmalı
       resolve: {
         auth: function(authService, $location) {
@@ -121,9 +127,22 @@ app.factory('AuthInterceptor', function($q, $injector) {
   };
 });
 
-// Uygulama çalıştırma
-app.run(function($rootScope, $location, authService, $translate) {
+app.run(function($rootScope, $location, authService, $translate, $templateRequest, $compile) {
+  // Route değişimlerinde layout yükleme ve auth kontrolü
   $rootScope.$on('$routeChangeStart', function(event, next, current) {
+    // Eğer bir layout belirlenmişse, onu yükle
+    if (next.$$route && next.$$route.layout) {
+      var layoutUrl = next.$$route.layout;
+      
+      // Layout dosyasını yükle
+      $templateRequest(layoutUrl).then(function(template) {
+        var layoutElement = angular.element(document.documentElement); // Tüm HTML elementini al
+        layoutElement.html(template); // Yeni layout'u DOM'a ekle
+        $compile(layoutElement.contents())($rootScope); // AngularJS template'ini derle
+      });
+    }
+
+    // Auth kontrolü: Eğer auth gerekliyse, kullanıcı giriş yapmamışsa login'e yönlendir
     if (next.$$route && next.$$route.resolve && next.$$route.resolve.auth) {
       if (!authService.isLoggedIn()) {
         $location.path('/login');
@@ -131,9 +150,17 @@ app.run(function($rootScope, $location, authService, $translate) {
     }
   });
 
-  var savedLanguage = localStorage.getItem('selectedLanguage'); // localStorage'dan dili alın
+  // Dil kontrolü: LocalStorage'da dil varsa onu kullan
+  var savedLanguage = localStorage.getItem('selectedLanguage');
   if (savedLanguage) {
     $translate.use(savedLanguage);
-    $rootScope.selectedLanguage = savedLanguage; // Eğer dil varsa, onu kullanın
+    $rootScope.selectedLanguage = savedLanguage; // Eğer dil varsa onu set et
+  }
+
+  // Eğer localStorage'da dil yoksa, varsayılan dil ayarını kullan
+  if (!$rootScope.selectedLanguage) {
+    $rootScope.selectedLanguage = $translate.preferredLanguage(); // Varsayılan dil
   }
 });
+
+
