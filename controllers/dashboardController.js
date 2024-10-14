@@ -33,6 +33,12 @@ app.controller('dashboardController', function($scope, authService, $location) {
   };
   
  
-
+  $scope.changeLanguage = function (langKey) {
+    console.log("changeLanguage="+langKey);
+    $translate.use(langKey);
+    localStorage.setItem('selectedLanguage', langKey);
+    $rootScope.selectedLanguage = langKey;
+    
+  };
 
 });
