@@ -55,8 +55,8 @@ app.config(function ($routeProvider, $httpProvider) {
       }
     }
   })
-  .when('/sayfa1', {
-    templateUrl: 'views/sayfa1.html',
+  .when('/profile', {
+    templateUrl: 'views/profile.html',
     controller: 'dashboardController', 
     isLoginPage: false,
     layout:'/layout/dashboard-layout.html',

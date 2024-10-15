@@ -22,7 +22,7 @@ app.controller('masterController', function ($scope, masterService, $rootScope, 
         if (sayfa.kod == "SAYFADENEME1") {
             console.log("Yönlendirme yapılıyor: /login");
             // Kullanıcıyı login sayfasına yönlendirme
-            $location.path("/sayfa1");
+            $location.path("/profile");
         }else if (sayfa.kod == "SAYFADENEME2") {
             console.log("Yönlendirme yapılıyor: /login");
             // Kullanıcıyı login sayfasına yönlendirme
