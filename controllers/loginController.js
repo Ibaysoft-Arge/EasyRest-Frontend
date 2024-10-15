@@ -4,7 +4,6 @@ app.controller("LoginController", function ($scope, authService, $location) {
   $scope.user = {};
   $scope.rememberMe = false;
 
-
   var guid = $location.search().g;
   var userID = $location.search().u;
 
