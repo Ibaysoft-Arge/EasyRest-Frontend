@@ -73,6 +73,7 @@ app.config(function ($routeProvider, $httpProvider) {
     templateUrl: 'views/landing.html',
     controller: 'paketController', // Büyük harfli 'D' ve 'C' kullanın
     isLoginPage: true,
+    layout:'/layout/main-layout.html',
   })
   .otherwise({
     redirectTo: '/landing'
