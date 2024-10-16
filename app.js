@@ -133,7 +133,7 @@ app.run(function ($rootScope, $location, authService, $translate, $templateReque
       var layoutUrl = next.$$route.layout;
 
       // Layout-container'ı kontrol edin ve içeriği temizleyin
-      var layoutElement = angular.element(document.querySelector('#layout-container'));
+      var layoutElement = angular.element(document.querySelector('#layout-container_bizim'));
       layoutElement.empty(); // Mevcut layout'u temizleyin
 
       // Yeni layout'u yükleyin
