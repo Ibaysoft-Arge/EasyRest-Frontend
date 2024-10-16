@@ -21,25 +21,25 @@ app.config(function ($routeProvider, $httpProvider) {
     templateUrl: 'views/login.html',
     controller: 'LoginController', // Büyük harfli 'L' ve 'C' kullanın
     isLoginPage: true,
-    layout:'/layout/main-layout.html',
+    layout:'/layout/login-layout.html',
   })
   .when('/register', {
     templateUrl: 'views/register.html',
     controller: 'registerController', 
     isLoginPage: false,
-    layout:'/layout/main-layout.html',
+    layout:'/layout/login-layout.html',
   })
   .when('/forgotpassword', {
     templateUrl: 'views/forgotPassword.html',
     controller: 'LoginController', 
     isLoginPage: false,
-    layout:'/layout/main-layout.html',
+    layout:'/layout/login-layout.html',
   })
   .when('/resetpassword', {
     templateUrl: 'views/resetPassword.html',
     controller: 'LoginController', 
     isLoginPage: false,
-    layout:'/layout/main-layout.html',
+    layout:'/layout/login-layout.html',
   })
   .when('/dashboard', {
     templateUrl: 'views/dashboard.html',
@@ -72,6 +72,12 @@ app.config(function ($routeProvider, $httpProvider) {
   .when('/landing', {
     templateUrl: 'views/landing.html',
     controller: 'paketController', // Büyük harfli 'D' ve 'C' kullanın
+    isLoginPage: true,
+    layout:'/layout/main-layout.html',
+  })
+  .when('/contactus', {
+    templateUrl: 'views/contactus.html',
+    controller: 'contactusController', // Büyük harfli 'D' ve 'C' kullanın
     isLoginPage: true,
     layout:'/layout/main-layout.html',
   })
