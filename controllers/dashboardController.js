@@ -39,6 +39,7 @@ app.controller('dashboardController', function($scope, authService, $location) {
     localStorage.setItem('selectedLanguage', langKey);
     $rootScope.selectedLanguage = langKey;
     
+
   };
 
 });
