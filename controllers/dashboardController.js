@@ -4,6 +4,7 @@ app.controller('dashboardController', function($scope, authService, $location) {
 
   $scope.user = {};
     // Kullanıcı bilgilerini alma
+    
     authService.getUserFromServer().then(function(response) {
       $scope.user = response.data;
     }).catch(function(error) {
@@ -41,5 +42,6 @@ app.controller('dashboardController', function($scope, authService, $location) {
     
 
   };
+
 
 });
