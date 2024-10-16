@@ -57,7 +57,7 @@ app.config(function ($routeProvider, $httpProvider) {
   })
   .when('/profile', {
     templateUrl: 'views/profile.html',
-    controller: 'dashboardController', 
+    controller: 'profileController', 
     isLoginPage: false,
     layout:'/layout/dashboard-layout.html',
     // Bu rotaya erişmek için giriş yapılmış olmalı
