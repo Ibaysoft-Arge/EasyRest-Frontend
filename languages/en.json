@@ -36,6 +36,13 @@
     "RESETPASSWORDNEWPASS":"New Password",
     "RESETPASSWORDCONFIRMPASS":"Confirm New Password",
     "RESETPASSWORD":"Set new password",
-    "RESETPASSWORDBACKTOLOGIN":"Back to login"
-  }
+    "RESETPASSWORDBACKTOLOGIN":"Back to login",
+
+    "TRENDYOL-E-B-BASLIK":"Trendyol Entegration Information",
+    "TRENDYOL-E-B-SATICIID":"Trendyol Seller ID",
+    "TRENDYOL-E-B-RESTID":"Trendyol Rest ID",
+    "TRENDYOL-E-B-RESTKEY":"Trendyol Rest Key",
+    "TRENDYOL-E-B-SECRETKEY":"Trendyol Secret Key",
+    "BUTTON-GONDER":"Save"
+}
   
