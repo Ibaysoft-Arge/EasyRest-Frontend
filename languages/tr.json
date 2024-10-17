@@ -43,6 +43,8 @@
     "TRENDYOL-E-B-RESTID":"Trendyol Rest ID",
     "TRENDYOL-E-B-RESTKEY":"Trendyol Rest Key",
     "TRENDYOL-E-B-SECRETKEY":"Trendyol Secret Key",
-    "BUTTON-GONDER":"Kaydet"
+    "BUTTON-KAYDET":"Kaydet",
+    "YEMEKSEPETI-E-B-BASLIK":"Trendyol Entegration Information",
+    "YEMEKSEPETI-E-B-USER":"Kullanıcı",
+    "YEMEKSEPETI-E-B-PASS":"Şifre"
 }
-  

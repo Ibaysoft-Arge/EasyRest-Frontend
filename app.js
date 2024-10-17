@@ -47,6 +47,12 @@ app.config(function ($routeProvider, $httpProvider) {
     isLoginPage: false,
     layout:'/layout/dashboard-layout.html',
   })
+  .when('/yemeksepeti-entegrasyon-bilgileri', {
+    templateUrl: 'views/yemekSepetiEntegrasyonBilgileri.html',
+    controller: 'entegrasyonController',
+    isLoginPage: false,
+    layout:'/layout/dashboard-layout.html',
+  })
   .when('/dashboard', {
     templateUrl: 'views/dashboard.html',
     controller: 'dashboardController', 

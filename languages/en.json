@@ -43,6 +43,8 @@
     "TRENDYOL-E-B-RESTID":"Trendyol Rest ID",
     "TRENDYOL-E-B-RESTKEY":"Trendyol Rest Key",
     "TRENDYOL-E-B-SECRETKEY":"Trendyol Secret Key",
-    "BUTTON-GONDER":"Save"
+    "BUTTON-KAYDET":"Save",
+    "YEMEKSEPETI-E-B-BASLIK":"Yemek Sepeti Entegration Information",
+    "YEMEKSEPETI-E-B-USER":"User",
+    "YEMEKSEPETI-E-B-PASS":"Pass"
 }
-  
