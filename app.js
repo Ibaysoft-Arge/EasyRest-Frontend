@@ -41,6 +41,12 @@ app.config(function ($routeProvider, $httpProvider) {
     isLoginPage: false,
     layout:'/layout/login-layout.html',
   })
+  .when('/trendyol-entegrasyon-bilgileri', {
+    templateUrl: 'views/trendyolEntegrasyonBilgileri.html',
+    controller: 'entegrasyonController',
+    isLoginPage: false,
+    layout:'/layout/dashboard-layout.html',
+  })
   .when('/dashboard', {
     templateUrl: 'views/dashboard.html',
     controller: 'dashboardController', 

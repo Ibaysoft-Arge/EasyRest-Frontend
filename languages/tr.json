@@ -36,7 +36,13 @@
     "RESETPASSWORDNEWPASS":"Yeni Şifre",
     "RESETPASSWORDCONFIRMPASS":"Yeni Şifre Tekrar",
     "RESETPASSWORD":"Şifreyi Güncelle",
-    "RESETPASSWORDBACKTOLOGIN":"Girişe geri dön"
+    "RESETPASSWORDBACKTOLOGIN":"Girişe geri dön",
 
-  }
+    "TRENDYOL-E-B-BASLIK":"Trendyol Entegrasyon Bilgileri",
+    "TRENDYOL-E-B-SATICIID":"Trendyol Satıcı ID",
+    "TRENDYOL-E-B-RESTID":"Trendyol Rest ID",
+    "TRENDYOL-E-B-RESTKEY":"Trendyol Rest Key",
+    "TRENDYOL-E-B-SECRETKEY":"Trendyol Secret Key",
+    "BUTTON-GONDER":"Kaydet"
+}
   
