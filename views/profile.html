@@ -32,13 +32,13 @@
           <!-- Account -->
           <div class="card-body">
             <div class="d-flex align-items-start align-items-sm-center gap-6 pb-4 border-bottom">
-              <img ng-src="{{previewImageSrc || 'data:image/png;base64,' + user.avatar}}" alt="user-avatar"
+              <img ng-src="{{previewImageSrc || 'data:image/jpeg;base64,' + user.avatar}}" alt="user-avatar"
                    class="d-block w-px-100 h-px-100 rounded" id="uploadedAvatar" />
               <div class="button-wrapper">
                 <label for="upload" class="btn btn-primary me-3 mb-4" tabindex="0">
                   <span class="d-none d-sm-block">Upload new photo</span>
                   <i class="bx bx-upload d-block d-sm-none"></i>
-                  <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg"
+                  <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg , image/jpg"
                          onchange="angular.element(this).scope().previewImage(this)" />
                 </label>
                 <button type="button" class="btn btn-label-secondary account-image-reset mb-4" ng-click="resetImage()">
