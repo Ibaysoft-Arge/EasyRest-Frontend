@@ -95,14 +95,14 @@
 
           <div class="mb-6 mt-8">
             <div class="form-check mb-8 ms-2">
-              <input class="form-check-input" type="checkbox" id="terms-conditions" name="terms" />
+              <input class="form-check-input" ng-model="isChecked" type="checkbox" id="terms-conditions" name="terms" />
               <label class="form-check-label" for="terms-conditions">
                 {{ 'REGISTERKVKKDESCP' | translate }}
                 <a href="javascript:void(0);">{{ 'REGISTERKVKK' | translate }}</a>
               </label>
             </div>
           </div>
-          <button class="btn btn-primary d-grid w-100">{{ 'REGISTERSIGNUP' | translate }}</button>
+          <button class="btn btn-primary d-grid w-100" ng-disabled="!isChecked">{{ 'REGISTERSIGNUP' | translate }}</button>
         </form>
 
         <!-- Hata Mesajı -->
