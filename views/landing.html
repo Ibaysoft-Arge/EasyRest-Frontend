@@ -780,26 +780,28 @@
                   class="d-none d-lg-block" />
                 partnerships, or have pre-sales questions, you’re at the right place.
               </p>
-              <form>
-                <div class="row g-4">
-                  <div class="col-md-6">
-                    <label class="form-label" for="contact-form-fullname">Full Name</label>
-                    <input type="text" class="form-control" id="contact-form-fullname" placeholder="john" />
+              <div ng-controller="paketController">
+                <form >
+                  <div class="row g-4">
+                    <div class="col-md-6">
+                      <label class="form-label" for="contact-form-fullname">Full Name</label>
+                      <input type="text" class="form-control" id="contact-form-fullname" ng-model="emailData.fullname" placeholder="john" />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label" for="contact-form-email">Email</label>
+                      <input type="text" id="contact-form-email" class="form-control" ng-model="emailData.email" placeholder="johndoe@gmail.com" />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label" for="contact-form-message">Message</label>
+                      <textarea id="contact-form-message" class="form-control" ng-model="emailData.message" rows="11" placeholder="Write a message"></textarea>
+                    </div>
+                    <div class="col-12">
+                      <button type="button" ng-click="sendEmail()" class="btn btn-primary">Send inquiry</button>
+                    </div>
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="contact-form-email">Email</label>
-                    <input type="text" id="contact-form-email" class="form-control" placeholder="johndoe@gmail.com" />
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label" for="contact-form-message">Message</label>
-                    <textarea id="contact-form-message" class="form-control" rows="11"
-                      placeholder="Write a message"></textarea>
-                  </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-primary">Send inquiry</button>
-                  </div>
-                </div>
-              </form>
+                </form>
+              </div>
+              
             </div>
           </div>
         </div>

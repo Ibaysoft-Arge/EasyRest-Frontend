@@ -102,7 +102,7 @@
           <div class="my-8">
             <div class="d-flex justify-content-between">
               <div class="form-check mb-0 ms-2">
-                <input class="form-check-input" ng-model="rememberMe" type="checkbox" id="remember-me">
+                <input class="form-check-input"  type="checkbox" ng-model="rememberMe" ng-change="toggleRememberMe()" id="remember-me">
                 <label class="form-check-label" for="remember-me"> {{'LOGINREMEMBERME' | translate}} </label>
               </div>
               <a href="#!/forgotpassword">

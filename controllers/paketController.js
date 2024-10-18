@@ -1,5 +1,7 @@
-app.controller('paketController', function($scope, paketService, $translate,$rootScope) {
+
+app.controller('paketController', function($scope, paketService, $translate,$rootScope,$http) {
     $scope.paketler = {};
+
 
     paketService.getPaketler().then(function(response) {
             console.log('paketController response:', response);
@@ -23,5 +25,29 @@ app.controller('paketController', function($scope, paketService, $translate,$roo
             localStorage.setItem('selectedLanguage', langKey);
             $rootScope.selectedLanguage = langKey;
             
-          };
+        };
+
+    
+            $scope.emailData = {
+                fullname: '',
+                email: '',
+                message: ''
+            };
+        
+            $scope.sendEmail = function() {
+                console.log($scope.emailData.fullname);// Kullanıcıdan alınan bilgileri al
+                var fullname = encodeURIComponent($scope.emailData.fullname);
+                var email = encodeURIComponent($scope.emailData.email);
+                var message = encodeURIComponent($scope.emailData.message);
+        
+                // Mailto URL'sini oluştur
+                var mailtoLink = `mailto:semihaysu17@gmail.com?subject=Inquiry from ${fullname}&body=>\n\n${message}`;
+        
+                // Kullanıcının varsayılan e-posta istemcisini aç
+                window.location.href = mailtoLink;
+              
+            };
+       
+        
+        
 });

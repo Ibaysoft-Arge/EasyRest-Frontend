@@ -80,4 +80,33 @@ $scope.resetPassword = function() {
 };
 
 
+// Kullanıcı verilerini yükleme
+if (localStorage.getItem('rememberMe') === 'true') {
+  $scope.user = {
+    kullaniciAdi: localStorage.getItem('username'),
+    sifre: localStorage.getItem('password'),
+  };
+  $scope.rememberMe = true;
+} else {
+  $scope.user = {
+    kullaniciAdi: '',
+    sifre: ''
+  };
+  $scope.rememberMe = false;
+}
+
+// "Beni Hatırla" kutusu değiştiğinde çağrılacak fonksiyon
+$scope.toggleRememberMe = function() {
+  if ($scope.rememberMe) {
+    localStorage.setItem('rememberMe', 'true');
+    localStorage.setItem('username', $scope.user.kullaniciAdi);
+    localStorage.setItem('password', $scope.user.sifre);
+  } else {
+    localStorage.removeItem('rememberMe');
+    localStorage.removeItem('username');
+    localStorage.removeItem('password');
+  }
+};
+
+
 });
