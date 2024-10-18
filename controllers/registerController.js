@@ -17,4 +17,8 @@ app.controller('registerController', function($scope, authService, $location) {
       }
     });
   };
+
+  $scope.isChecked = false;
+
+ 
 });
